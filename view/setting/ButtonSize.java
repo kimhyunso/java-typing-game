@@ -1,4 +1,4 @@
-package view.components;
+package view.setting;
 
 public enum ButtonSize {
     WIDTH(100), HEIGHT(25);

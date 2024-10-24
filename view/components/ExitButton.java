@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import view.setting.ButtonSize;
+
 public class ExitButton extends JButton implements ActionListener {
     private static final String BUTTON_NAME = "싱글모드";
     private static final int BUTTON_WIDTH = ButtonSize.WIDTH.value();

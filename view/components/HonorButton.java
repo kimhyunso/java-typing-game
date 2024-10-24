@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
+import view.setting.ButtonSize;
+
 public class HonorButton extends JButton implements ActionListener {
     private static final String BUTTON_NAME = "명예의전당";
     private static final int BUTTON_WIDTH = ButtonSize.WIDTH.value();
