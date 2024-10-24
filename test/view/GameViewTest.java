@@ -3,7 +3,6 @@ package test.view;
 import java.util.Scanner;
 
 public class GameViewTest {
-    private SettingViewTest settingViewTest = new SettingViewTest();
 
     public GameViewTest() {
         Scanner input = new Scanner(System.in);
@@ -17,7 +16,6 @@ public class GameViewTest {
             System.out.println("5. 끝내기");
 
             mode = input.nextInt();
-            
         }       
     }
 }
