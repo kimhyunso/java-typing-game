@@ -9,9 +9,9 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import model.Display;
-import model.Version;
 import view.components.MainMenuPanel;
+import view.settings.Display;
+import view.settings.Version;
 
 public class GameView extends JFrame {
     private static final int FARME_WIDTH = Display.WIDTH.value();

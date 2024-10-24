@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
-import view.setting.ButtonSize;
+import view.settings.ButtonSize;
 
 public class SingleModeButton extends JButton implements ActionListener {
     private static final String BUTTON_NAME = "싱글모드";

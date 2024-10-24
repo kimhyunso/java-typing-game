@@ -1,4 +1,4 @@
-package model;
+package view.settings;
 
 public enum Display {
     WIDTH(800), HEIGHT(600);

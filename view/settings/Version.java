@@ -1,4 +1,4 @@
-package model;
+package view.settings;
 
 public enum Version {
     VERSION("0.0.1");
