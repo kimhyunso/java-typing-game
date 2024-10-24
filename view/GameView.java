@@ -1,47 +1,39 @@
 package view;
 
+import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import model.Display;
 import model.Version;
+import view.components.MainMenuPanel;
 
 public class GameView extends JFrame {
+    private static final int FARME_WIDTH = Display.WIDTH.value();
+    private static final int FARME_HEIGHT = Display.HEIGHT.value();    
+    private MainMenuPanel mainMenuPanel = new MainMenuPanel();
+    private JPanel cards;
 
-    private Display display;
-    private JPanel panel;
-    private Buttons buttons = new Buttons();
-    
     public GameView() {
         setTitle("Typing Game " + Version.VERSION.value());
-        setSize(display.WIDTH.value(), display.HEIGHT.value());
-        Dimension frameSize = this.getSize();
+        setSize(FARME_WIDTH, FARME_HEIGHT);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
-        
-        panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        
-        addButton();
-        setLayout(new FlowLayout(FlowLayout.CENTER, 0, (frameSize.height -  panel.getPreferredSize().height) / 2));
-        add(panel);
+		setLocation((screenSize.width - FARME_WIDTH) / 2, (screenSize.height - FARME_HEIGHT) / 2);
+        setLayout(new FlowLayout(FlowLayout.CENTER, 0, (FARME_HEIGHT -  mainMenuPanel.getPreferredSize().height) / 2));
 
+        cards = new JPanel(new CardLayout());
+        cards.add(mainMenuPanel, "mainMenu");
+        cards.revalidate();
+
+        add(cards);
         setResizable(false);
         setVisible(true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-    }
-
-    public void addButton() {
-        for (JButton button : buttons.getButtons()) {
-            panel.add(button);
-        }
     }
 
     @Override
@@ -49,5 +41,4 @@ public class GameView extends JFrame {
         // TODO Auto-generated method stub
         super.paint(g);
     }
-
 }
