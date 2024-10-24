@@ -13,11 +13,11 @@ public class Buttons {
     private List<JButton> buttons = new ArrayList<JButton>();
 
     public Buttons() {
-        buttons.add(exitButton);
-        buttons.add(honorButton);
+        buttons.add(singleModeButton);
         buttons.add(multiModeButton);
         buttons.add(settingButton);
-        buttons.add(singleModeButton);
+        buttons.add(honorButton);
+        buttons.add(exitButton);
     }
 
     public List<JButton> getButtons() {
