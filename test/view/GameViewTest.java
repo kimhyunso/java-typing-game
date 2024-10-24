@@ -16,6 +16,7 @@ public class GameViewTest {
             System.out.println("5. 끝내기");
 
             mode = input.nextInt();
+
         }       
     }
 }
