@@ -1,5 +1,5 @@
-package test.view;
+package test.view.settings;
 
-public interface Mode {
+public interface ModeTest {
     public void execute();    
 }

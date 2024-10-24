@@ -17,13 +17,7 @@ public class GameViewTest {
             System.out.println("5. 끝내기");
 
             mode = input.nextInt();
-            if (mode == 1) {
-                settingViewTest.start();
-            }else if (mode == 2) {
-                settingViewTest.start();
-            }else if (mode == 3) {
-                settingViewTest.start();
-            }
+            
         }       
     }
 }
