@@ -7,7 +7,7 @@ import org.example.view.components.listener.ActionListenerTest;
 import java.util.Scanner;
 
 public class GameViewTest {
-    private ActionListenerTest modeTest;
+    private ActionListenerTest listener;
     private ModeSettingTest modeSettingTest = ModeSettingTest.EMPTY_MODE;
 
     public GameViewTest() {
@@ -21,8 +21,8 @@ public class GameViewTest {
             System.out.println("5. 끝내기");
 
             String mode = input.next();
-            modeTest = modeSettingTest.mode(mode);
-            modeTest.execute();
+            listener = modeSettingTest.mode(mode);
+            listener.execute();
 
             if (mode.equals("5")) {
                 break;
