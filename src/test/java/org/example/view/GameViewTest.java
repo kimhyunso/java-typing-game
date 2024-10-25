@@ -28,6 +28,5 @@ public class GameViewTest {
                 break;
             }
         }
-        input.close();
     }
 }

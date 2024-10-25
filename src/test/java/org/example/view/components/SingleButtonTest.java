@@ -1,30 +1,56 @@
 package org.example.view.components;
 
 
+import java.util.List;
 import java.util.Scanner;
 
-import org.example.RedisHandler;
+import org.example.sample.RedisSample;
 import org.example.view.settings.ModeTest;
 
 public class SingleButtonTest implements ModeTest {
-
-    // TODO: 레디스에서 가져온 단어들
-    private String words = "강아지";
-    // TODO: 스코어 저장
     private int score;
-    private RedisHandler handler;
+    private List<String> words = List.of(
+            "가로수", "가방끈", "가위손", "간장게", "강아지", "개나리", "거미줄", "건강식",
+            "걸음마", "검은콩", "결혼식", "경고문", "고구마", "고라니", "골목길", "공책장",
+            "과일즙", "관람객", "교육자", "교회당", "구급차", "구름다", "국수집", "귀뚜라",
+            "귤껍질", "금메달", "기념비", "기념일", "기름값", "기차역", "까치발", "꽃다발",
+            "꿀벌집", "끈끈이", "나무꾼", "나무판", "나침반", "날씨표", "남동생", "남산타",
+            "냉장고", "노란색", "노트북", "녹차밭", "농구장", "단무지", "단풍잎", "닭갈비",
+            "담배꽁", "독수리", "동네길", "동물원", "등산로", "땅콩잼", "뜨거운", "라디오를",
+            "라면집", "레몬차", "로봇팔", "마늘빵", "마른잎", "마을길", "만두집", "머리끈",
+            "목도리", "못난이", "무더위", "무릎팍", "무지개", "물방울", "물통속", "미끄럼",
+            "미니컵", "바나나", "바닷물", "바람꽃", "반딧불", "방울토", "배낭길", "벚꽃길",
+            "별자리", "병원비", "보리차", "보물상", "부모님", "불고기", "불꽃놀이", "붉은색",
+            "빙글빙", "사과즙", "사다리", "사막길", "사탕수", "삼각형", "상어이빨", "상추쌈",
+            "새우젓", "생강차", "생일선", "선글라스", "선물상", "소나기", "소나무", "소방서",
+            "손수건", "송편집", "술안주", "시냇물", "시나리오", "식기세", "설거지", "식사법",
+            "신발끈", "신호등", "십자가", "씨앗봉", "쌀밥상", "아침밥", "아카시아", "악어이빨",
+            "안개꽃", "약국문", "양말짝", "어깨끈", "어린이집", "어부바", "옥수수", "온돌방",
+            "요리책", "욕실문", "우동집", "운동장", "울타리", "원피스", "유람선", "은행나무",
+            "음식물", "이발소", "인삼차", "일기장", "자두즙", "작은길", "장난감", "장미꽃",
+            "장화신", "잠자리", "저녁밥", "전화기", "제비집", "주먹밥", "지도책", "지하철",
+            "지팡이집", "진달래", "짐가방", "짜장면", "찐빵집", "찜질방", "차고문", "창문틀",
+            "청바지", "체육관", "초콜릿", "추석상", "축구장", "치킨집", "침대맡", "칫솔집",
+            "칼국수", "커피숍", "케이크토", "코끼리", "콜라병", "콩나물", "큰길목", "클라우드",
+            "키다리", "테이블", "텔레비전", "파도소리", "파란색", "팝콘통", "팬더곰", "편의점",
+            "평화상", "포도밭", "푸른잎", "품질보", "하늘빛", "향기캔", "휴게소", "흰구름",
+            "가마솥", "길고양", "단소리", "밤하늘", "산들바", "양배추", "운동복", "종이컵",
+            "책가방"
+    );
 
     @Override
     public void execute() {
-        handler = new RedisHandler();
         Scanner input = new Scanner(System.in);
-        
         System.out.println("==== 싱글모드 게임 ====");
+        int wordCount = 0;
 
          while (true) {
-             System.out.println("단어: " + words);
+             if (wordCount >= 200) {
+                 wordCount = 0;
+             }
+             String targetWord = words.get(wordCount++);
+             System.out.println("단어: " + targetWord);
              System.out.println("1. 텍스트 입력하기");
-             System.out.println("5. 끝내기");
              System.out.println("6. 메인 메뉴로 가기");
              String mode = input.next();
 
@@ -32,15 +58,14 @@ public class SingleButtonTest implements ModeTest {
                  break;
              }
 
+             System.out.print("입력: ");
              String word = input.next();
-             if (words.equals(word)) {
+             if (targetWord.equals(word)) {
                  score += 10;
              }
-             System.out.println("단어: " + words);
-             words = "메추리알";
+
+             System.out.println("점수 현황: " + score);
          }
-         System.out.println("점수 현황: " + score);
-         input.close();
     }
 
 }

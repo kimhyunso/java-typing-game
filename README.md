@@ -102,10 +102,9 @@ model: 좀비, 군인, 점수, 레벨, 타자속도
 view: JFrame
 controller
 
-## 단어모음집
-1. list 구현
+## 자료구조
+1. arrayList를 사용하여 구현
 2. radis를 사용하여 저장된 단어를 갖고옴 -> list 자료구조 사용
-
 
 
 
