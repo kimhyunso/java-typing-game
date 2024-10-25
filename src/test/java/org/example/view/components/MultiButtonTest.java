@@ -12,7 +12,7 @@ public class MultiButtonTest implements ModeTest {
     @Override
     public void execute() {
         Scanner input = new Scanner(System.in);
-        System.out.println("==== 싱글모드 게임 ====");
+        System.out.println("==== 멀티모드 게임 ====");
         int wordCount = 0;
 
         while (true) {
