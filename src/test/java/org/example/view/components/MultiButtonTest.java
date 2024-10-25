@@ -1,11 +1,11 @@
 package org.example.view.components;
 
 import org.example.domain.Archive;
-import org.example.view.settings.ModeTest;
+import org.example.view.components.listener.ActionListenerTest;
 
 import java.util.Scanner;
 
-public class MultiButtonTest implements ModeTest {
+public class MultiButtonTest implements ActionListenerTest {
 
     private int score;
 

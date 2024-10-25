@@ -1,8 +1,8 @@
 package org.example.view.components;
 
-import org.example.view.settings.ModeTest;
+import org.example.view.components.listener.ActionListenerTest;
 
-public class ExitButtonTest implements ModeTest {
+public class ExitButtonTest implements ActionListenerTest {
 
     @Override
     public void execute() {

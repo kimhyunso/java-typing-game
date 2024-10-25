@@ -1,8 +1,8 @@
 package org.example.view.components;
 
-import org.example.view.settings.ModeTest;
+import org.example.view.components.listener.ActionListenerTest;
 
-public class HonorButtonTest implements ModeTest {
+public class HonorButtonTest implements ActionListenerTest {
 
     @Override
     public void execute() {

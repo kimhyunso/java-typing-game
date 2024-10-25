@@ -1,13 +1,13 @@
 package org.example.view;
 
 
-import org.example.view.settings.ModeSettingTest;
-import org.example.view.settings.ModeTest;
+import org.example.view.components.ModeSettingTest;
+import org.example.view.components.listener.ActionListenerTest;
 
 import java.util.Scanner;
 
 public class GameViewTest {
-    private ModeTest modeTest;
+    private ActionListenerTest modeTest;
     private ModeSettingTest modeSettingTest = ModeSettingTest.EMPTY_MODE;
 
     public GameViewTest() {

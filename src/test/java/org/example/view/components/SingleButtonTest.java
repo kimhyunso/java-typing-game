@@ -1,14 +1,12 @@
 package org.example.view.components;
 
 
-import java.util.List;
 import java.util.Scanner;
 
 import org.example.domain.Archive;
-import org.example.sample.RedisSample;
-import org.example.view.settings.ModeTest;
+import org.example.view.components.listener.ActionListenerTest;
 
-public class SingleButtonTest implements ModeTest {
+public class SingleButtonTest implements ActionListenerTest {
     private int score;
 
     @Override

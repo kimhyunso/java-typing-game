@@ -1,7 +1,6 @@
-package org.example.view.settings;
+package org.example.view.components;
 
-
-import org.example.view.components.*;
+import org.example.view.components.listener.ActionListenerTest;
 
 import java.util.Arrays;
 
@@ -10,14 +9,14 @@ public enum ModeSettingTest {
     MULTI_MODE("2", new MultiButtonTest()), SETTING_MODE("3", new SettingButtonTest()),
     HONOR_MODE("4", new HonorButtonTest()), EXIT_MODE("5", new ExitButtonTest());
     private String name;
-    private ModeTest modeTest;
+    private ActionListenerTest modeTest;
 
-    private ModeSettingTest(String name, ModeTest modeTest) {
+    private ModeSettingTest(String name, ActionListenerTest modeTest) {
         this.name = name;
         this.modeTest = modeTest;
     }
 
-    public ModeTest mode(String name) {
+    public ActionListenerTest mode(String name) {
         return Arrays.stream(ModeSettingTest.values())
         .filter(item -> item.name.equals(name))
         .findFirst()
@@ -25,7 +24,7 @@ public enum ModeSettingTest {
         .getModeTest();
     }
 
-    private ModeTest getModeTest() {
+    private ActionListenerTest getModeTest() {
         return this.modeTest;
     }
 }

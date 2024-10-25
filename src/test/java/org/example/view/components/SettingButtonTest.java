@@ -1,10 +1,10 @@
 package org.example.view.components;
 
-import org.example.view.settings.ModeTest;
+import org.example.view.components.listener.ActionListenerTest;
 
 import java.util.Scanner;
 
-public class SettingButtonTest implements ModeTest {
+public class SettingButtonTest implements ActionListenerTest {
 
     @Override
     public void execute() {
