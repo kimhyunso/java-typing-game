@@ -1,18 +1,20 @@
 package org.example.net;
 
 import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
-import java.net.SocketException;
+import java.net.*;
 
 public class GameServer extends Thread {
     private DatagramSocket socket;
+    private String HOST = "127.0.0.1";
+    private int PORT = 9999;
 
     public GameServer() {
         try {
-            socket = new DatagramSocket(9999);
+            InetAddress address = InetAddress.getByName(HOST);
+            socket = new DatagramSocket(PORT, address);
         } catch (SocketException e) {
+            throw new RuntimeException(e);
+        } catch (UnknownHostException e) {
             throw new RuntimeException(e);
         }
     }
@@ -27,10 +29,12 @@ public class GameServer extends Thread {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            System.out.println(packet.getData());
         }
     }
 
-    public DatagramSocket getSocket() {
-        return socket;
+    public static void main(String[] args) {
+        GameServer server = new GameServer();
+        server.start();
     }
 }

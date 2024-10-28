@@ -12,13 +12,9 @@ public class Room {
     private final Set<Player> players = new HashSet<>();
     private DatagramSocket socket;
 
-    public Room(int roomId, DatagramSocket socket) throws SocketException {
+    public Room(int roomId) throws SocketException {
         this.roomId = roomId;
-        this.socket = socket;
-    }
-
-    public Room(int roomId) {
-        this.roomId = roomId;
+        this.socket = new DatagramSocket();
     }
 
     public int getRoomId() {
