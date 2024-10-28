@@ -10,11 +10,15 @@ import java.util.Set;
 public class Room {
     private int roomId;
     private final Set<Player> players = new HashSet<>();
-    private final DatagramSocket socket;
+    private DatagramSocket socket;
 
-    public Room(int roomId) throws SocketException {
+    public Room(int roomId, DatagramSocket socket) throws SocketException {
         this.roomId = roomId;
-        this.socket = new DatagramSocket();  // UDP 소켓 생성
+        this.socket = socket;
+    }
+
+    public Room(int roomId) {
+        this.roomId = roomId;
     }
 
     public int getRoomId() {
