@@ -10,13 +10,16 @@ import java.net.UnknownHostException;
 
 public class Main {
     public static void main(String[] args) throws SocketException, UnknownHostException {
-
-//        Thread thread = new GameServer();
-//        thread.setDaemon(true);
-//        thread.start();
-
+        start();
         RoomManager roomManager = RoomManager.getInstance();
         Room room = roomManager.createRoom();
         GameViewTest gameViewTest = new GameViewTest(room);
+    }
+
+    public synchronized static void start() {
+        GameServer server = new GameServer();
+        server.setDaemon(true);
+        server.start();
+        server.getSocket();
     }
 }

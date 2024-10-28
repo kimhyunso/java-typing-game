@@ -27,17 +27,10 @@ public class GameServer extends Thread {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            String message = new String(packet.getData());
-            sendData(data, packet.getAddress(), packet.getPort());
         }
     }
 
-    public void sendData(byte[] data, InetAddress address, int port) {
-        DatagramPacket packet = new DatagramPacket(data, data.length, address, port);
-        try {
-            socket.send(packet);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public DatagramSocket getSocket() {
+        return socket;
     }
 }
