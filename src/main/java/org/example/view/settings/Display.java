@@ -1,4 +1,4 @@
-package view.settings;
+package org.example.view.settings;
 
 public enum Display {
     WIDTH(800), HEIGHT(600);

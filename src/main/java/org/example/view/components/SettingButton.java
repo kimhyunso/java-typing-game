@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
-import view.settings.ButtonSize;
+import org.example.view.settings.ButtonSize;
 
 public class SettingButton extends JButton implements ActionListener {
     private static final String BUTTON_NAME = "설정";

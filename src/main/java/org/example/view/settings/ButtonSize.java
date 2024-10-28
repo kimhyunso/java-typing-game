@@ -1,4 +1,4 @@
-package view.settings;
+package org.example.view.settings;
 
 public enum ButtonSize {
     WIDTH(100), HEIGHT(25);

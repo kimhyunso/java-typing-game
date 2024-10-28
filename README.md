@@ -107,11 +107,22 @@ controller
 2. radis를 사용하여 저장된 단어를 갖고옴 -> list 자료구조 사용
 
 
-
 ## 이미지 다운 경로
 https://craftpix.net/
 
 ## 참고 블로그
 https://binghedev.tistory.com/57
 
+
+## 20241028
+- fps 60으로 설정 기능 추가
+- 플레이어들은 서로간의 상태 데이터를 udp로 보냄 (최대 플레이어는 2명으로 제한)
+    - 1. attack
+        - 플레이어끼리 attack을 실행하면, zombie의 상태, solider의 상태를 brodcast로 보내야함
+    - 2. 좀비에게 공격을 당하고 있을 경우 
+        - 두 플레이어 전부 공격을 당함? -> zombie의 상태, solider의 상태를 brodcast로 보내야함
+
+
+
+참고: https://www.youtube.com/watch?v=7mlLlRjFDK8&list=PLiHSiO7e0JtCtLrl-erg7MYuzRBX2VuZd&index=16
 

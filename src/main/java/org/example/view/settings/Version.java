@@ -1,4 +1,4 @@
-package view.settings;
+package org.example.view.settings;
 
 public enum Version {
     VERSION("0.0.1");
