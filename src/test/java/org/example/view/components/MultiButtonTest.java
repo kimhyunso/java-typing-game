@@ -4,6 +4,7 @@ import org.example.domain.Archive;
 import org.example.net.Player;
 import org.example.net.Room;
 import org.example.net.RoomManager;
+import org.example.view.components.button.Button;
 import org.example.view.components.listener.ActionListenerTest;
 
 import java.net.InetAddress;
@@ -11,22 +12,22 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
-public class MultiButtonTest implements ActionListenerTest {
+public class MultiButtonTest extends Button implements ActionListenerTest {
 
     private int score;
-    private RoomManager roomManager;
-    private Room room;
     private Scanner input = new Scanner(System.in);
     private final static int PORT = 9999;
+    private final Room room;
 
-    public MultiButtonTest() throws SocketException, UnknownHostException {
-        room = roomManager.createRoom();
+    public MultiButtonTest(Room room) throws SocketException, UnknownHostException {
+        this.room = room;
         System.out.print("닉네임: ");
         String nickName = input.next();
         InetAddress intAddress = InetAddress.getByName("127.0.0.1");
         Player player = new Player(nickName, intAddress, PORT);
         room.addPlayer(player);
     }
+
 
     @Override
     public void execute() throws UnknownHostException, SocketException {
@@ -56,7 +57,10 @@ public class MultiButtonTest implements ActionListenerTest {
                 score += 10;
             }
 
+            room.broadcastGameState(word);
+
             System.out.println("점수 현황: " + score);
         }
     }
+
 }

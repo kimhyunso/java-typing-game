@@ -4,9 +4,10 @@ package org.example.view.components;
 import java.util.Scanner;
 
 import org.example.domain.Archive;
+import org.example.view.components.button.Button;
 import org.example.view.components.listener.ActionListenerTest;
 
-public class SingleButtonTest implements ActionListenerTest {
+public class SingleButtonTest extends Button implements ActionListenerTest {
     private int score;
 
     @Override

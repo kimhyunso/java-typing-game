@@ -1,16 +1,19 @@
 package org.example.view;
 
 
-import org.example.view.components.ModeSettingTest;
+import org.example.net.Room;
+import org.example.net.RoomManager;
+import org.example.view.components.*;
+import org.example.view.components.button.Button;
 import org.example.view.components.listener.ActionListenerTest;
 
+import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class GameViewTest {
-    private ActionListenerTest listener;
-    private ModeSettingTest modeSettingTest = ModeSettingTest.EMPTY_MODE;
-
-    public GameViewTest() {
+    private ActionListenerTest button;
+    public GameViewTest(Room room) throws SocketException, UnknownHostException {
         Scanner input = new Scanner(System.in);
 
         while (true) {
@@ -21,10 +24,21 @@ public class GameViewTest {
             System.out.println("5. 끝내기");
 
             String mode = input.next();
-            listener = modeSettingTest.mode(mode);
-            listener.execute();
 
-            if (mode.equals("5")) {
+            if (mode.equals("1")) {
+                button = new SingleButtonTest();
+                button.execute();
+            } else if (mode.equals("2")) {
+                button = new MultiButtonTest(room);
+                button.execute();
+            } else if (mode.equals("3")) {
+                button = new SettingButtonTest();
+                button.execute();
+            } else if (mode.equals("4")) {
+                button = new HonorButtonTest();
+                button.execute();
+            } else if (mode.equals("5")) {
+                button = new ExitButtonTest();
                 break;
             }
         }

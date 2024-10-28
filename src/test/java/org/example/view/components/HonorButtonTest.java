@@ -1,8 +1,9 @@
 package org.example.view.components;
 
+import org.example.view.components.button.Button;
 import org.example.view.components.listener.ActionListenerTest;
 
-public class HonorButtonTest implements ActionListenerTest {
+public class HonorButtonTest extends Button implements ActionListenerTest {
 
     @Override
     public void execute() {

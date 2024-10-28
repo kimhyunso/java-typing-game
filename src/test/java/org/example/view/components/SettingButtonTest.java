@@ -1,10 +1,11 @@
 package org.example.view.components;
 
+import org.example.view.components.button.Button;
 import org.example.view.components.listener.ActionListenerTest;
 
 import java.util.Scanner;
 
-public class SettingButtonTest implements ActionListenerTest {
+public class SettingButtonTest extends Button implements ActionListenerTest {
 
     @Override
     public void execute() {
