@@ -13,9 +13,7 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class GameViewTest {
-    private ModeController modeController;
-
-    public GameViewTest(Room room) throws SocketException, UnknownHostException {
+    public GameViewTest() throws SocketException, UnknownHostException {
         Scanner input = new Scanner(System.in);
 
         while (true) {
@@ -27,20 +25,20 @@ public class GameViewTest {
 
             String mode = input.next();
 
-            if (mode.equals("1")) {
-                modeController = new ModeController(new SingleButtonTest(room));
-            } else if (mode.equals("2")) {
-                modeController = new ModeController(new MultiButtonTest(room));
-            } else if (mode.equals("3")) {
-                modeController = new ModeController(new SettingButtonTest());
-            } else if (mode.equals("4")) {
-                modeController = new ModeController(new HonorButtonTest());
-            } else if (mode.equals("5")) {
-                modeController = new ModeController(new ExitButtonTest());
-                break;
-            }
+//            if (mode.equals("1")) {
+//                modeController = new ModeController(new SingleButtonTest(room));
+//            } else if (mode.equals("2")) {
+//                modeController = new ModeController(new MultiButtonTest(room));
+//            } else if (mode.equals("3")) {
+//                modeController = new ModeController(new SettingButtonTest());
+//            } else if (mode.equals("4")) {
+//                modeController = new ModeController(new HonorButtonTest());
+//            } else if (mode.equals("5")) {
+//                modeController = new ModeController(new ExitButtonTest());
+//                break;
+//            }
 
-            modeController.action();
+            // modeController.action();
         }
     }
 }
