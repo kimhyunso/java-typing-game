@@ -1,9 +1,9 @@
 package org.example.domain.Image;
 
-import java.io.File;
 
-public class RunImage extends File {
-    public RunImage(String pathname) {
-        super(pathname);
+public class RunImage extends Image implements ImageFactory {
+    @Override
+    public Image createImage() {
+        return this;
     }
 }

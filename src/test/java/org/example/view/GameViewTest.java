@@ -1,13 +1,6 @@
 package org.example.view;
 
 
-import org.example.controller.ModeController;
-import org.example.net.Room;
-import org.example.net.RoomManager;
-import org.example.view.components.*;
-import org.example.view.components.button.Button;
-import org.example.view.components.listener.ActionListenerTest;
-
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Scanner;

@@ -1,12 +1,6 @@
 package org.example;
 
-import org.example.controller.GameControllerTest;
-import org.example.domain.GameModelTest;
-import org.example.domain.Image.ImageFactory;
-import org.example.domain.Image.ImageType;
-import org.example.net.Room;
-import org.example.net.RoomManager;
-import org.example.view.GameViewTest;
+import org.example.domain.Image.Image;
 
 import java.net.SocketException;
 import java.net.UnknownHostException;
@@ -17,8 +11,7 @@ public class Main {
 //        GameControllerTest gameController = new GameControllerTest();
 //        GameViewTest gameViewTest = new GameViewTest();
 
-        ImageFactory factory = new ImageFactory();
-        factory.createImage(ImageType.MOVE);
+
     }
 
 }
