@@ -10,4 +10,13 @@ public class HonorButtonTest extends Button implements ActionListenerTest {
         System.out.println("명예의 전당 보는 중...");
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

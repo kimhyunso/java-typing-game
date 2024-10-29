@@ -4,11 +4,17 @@ package org.example.view.components;
 import java.util.Scanner;
 
 import org.example.domain.Archive;
+import org.example.net.Room;
 import org.example.view.components.button.Button;
 import org.example.view.components.listener.ActionListenerTest;
 
 public class SingleButtonTest extends Button implements ActionListenerTest {
     private int score;
+    private Room room;
+
+    public SingleButtonTest(Room room) {
+        this.room = room;
+    }
 
     @Override
     public void execute() {

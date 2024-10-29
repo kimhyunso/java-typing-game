@@ -9,5 +9,14 @@ public class ExitButtonTest extends Button implements ActionListenerTest {
     public void execute() {
         System.out.println("게임을 종료합니다.");
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

@@ -1,6 +1,7 @@
 package org.example.view;
 
 
+import org.example.controller.ModeController;
 import org.example.net.Room;
 import org.example.net.RoomManager;
 import org.example.view.components.*;
@@ -12,7 +13,8 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class GameViewTest {
-    private ActionListenerTest button;
+    private ModeController modeController;
+
     public GameViewTest(Room room) throws SocketException, UnknownHostException {
         Scanner input = new Scanner(System.in);
 
@@ -26,21 +28,19 @@ public class GameViewTest {
             String mode = input.next();
 
             if (mode.equals("1")) {
-                button = new SingleButtonTest();
-                button.execute();
+                modeController = new ModeController(new SingleButtonTest(room));
             } else if (mode.equals("2")) {
-                button = new MultiButtonTest(room);
-                button.execute();
+                modeController = new ModeController(new MultiButtonTest(room));
             } else if (mode.equals("3")) {
-                button = new SettingButtonTest();
-                button.execute();
+                modeController = new ModeController(new SettingButtonTest());
             } else if (mode.equals("4")) {
-                button = new HonorButtonTest();
-                button.execute();
+                modeController = new ModeController(new HonorButtonTest());
             } else if (mode.equals("5")) {
-                button = new ExitButtonTest();
+                modeController = new ModeController(new ExitButtonTest());
                 break;
             }
+
+            modeController.action();
         }
     }
 }

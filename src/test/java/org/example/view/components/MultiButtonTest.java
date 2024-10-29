@@ -10,35 +10,46 @@ import org.example.view.components.listener.ActionListenerTest;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class MultiButtonTest extends Button implements ActionListenerTest {
-
-    private int score;
-    private Scanner input = new Scanner(System.in);
+    private final static int MAX_USER_NUM = 2;
     private final static int PORT = 9999;
+    private int score;
     private final Room room;
+    private final InetAddress address;
 
-    public MultiButtonTest(Room room) throws SocketException, UnknownHostException {
+
+    public MultiButtonTest(Room room) {
         this.room = room;
-        System.out.print("닉네임: ");
-        String nickName = input.next();
-        InetAddress intAddress = InetAddress.getByName("127.0.0.1");
-        Player player = new Player(nickName, intAddress, PORT);
-        room.addPlayer(player);
+        try {
+            this.address = InetAddress.getByName("127.0.0.1");
+        } catch (UnknownHostException e) {
+            throw new RuntimeException(e);
+        }
     }
-
 
     @Override
     public void execute() throws UnknownHostException, SocketException {
         Scanner input = new Scanner(System.in);
         System.out.println("==== 멀티모드 게임 ====");
-
+        int userCount = 1;
         int wordCount = 0;
+
         while (true) {
+            if (userCount < MAX_USER_NUM) {
+                System.out.print("닉네임: ");
+                String nickName = input.next();
+                Player player = new Player(nickName, address, PORT);
+                room.addPlayer(player);
+                userCount++;
+            }
+
             if (wordCount >= 200) {
                 wordCount = 0;
             }
+
             String targetWord = Archive.WORDS.get(wordCount++);
             System.out.println("단어: " + targetWord);
             System.out.println("1. 텍스트 입력하기");
@@ -63,4 +74,25 @@ public class MultiButtonTest extends Button implements ActionListenerTest {
         }
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        MultiButtonTest that = (MultiButtonTest) object;
+        return score == that.score && Objects.equals(room, that.room) && Objects.equals(address, that.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(score, room, address);
+    }
+
+    @Override
+    public String toString() {
+        return "MultiButtonTest{" +
+                "score=" + score +
+                ", room=" + room +
+                ", address=" + address +
+                '}';
+    }
 }
