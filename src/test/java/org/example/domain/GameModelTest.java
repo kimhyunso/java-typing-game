@@ -1,21 +1,23 @@
 package org.example.domain;
 
 import org.example.controller.GameControllerTest;
-import org.example.domain.Image.AttackImage;
-import org.example.domain.Image.ImageFactory;
-import org.example.domain.Image.MoveImage;
-import org.example.domain.Image.RunImage;
+import org.example.domain.Image.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class GameModelTest {
-    private AttackImage attackImage;
-    private MoveImage moveImage;
-    private RunImage runImage;
-
+    private List<AttackImage> soldierAttackImages = new ArrayList<>();
+    private List<MoveImage> soldierMoveImages = new ArrayList<>();
+    private List<RunImage> soldierRunImages = new ArrayList<>();
 
     public GameModelTest() {
-        attackImage = new AttackImage("");
-        moveImage = new MoveImage("");
-        runImage = new RunImage();
+        new AttackImage("soldier_archive/soldier_davidthompson/attack");
+
+
     }
+
+
 
 }
