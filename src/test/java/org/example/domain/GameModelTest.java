@@ -12,6 +12,10 @@ public class GameModelTest {
     private RunImage runImage;
 
 
-
+    public GameModelTest() {
+        attackImage = new AttackImage("");
+        moveImage = new MoveImage("");
+        runImage = new RunImage();
+    }
 
 }

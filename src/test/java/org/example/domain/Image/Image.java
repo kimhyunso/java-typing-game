@@ -14,7 +14,8 @@ public abstract class Image {
     protected String currentDir = System.getProperty("user.dir");
     protected String filePath;
 
-    final void Image(String filePath) {
+
+    public Image(String filePath) {
         this.filePath += currentDir + "/src/test/resources/image/" + filePath;
         containsFile();
     }
