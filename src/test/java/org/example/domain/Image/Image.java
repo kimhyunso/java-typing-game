@@ -15,12 +15,7 @@ public abstract class Image {
     protected String filePath;
 
 
-    public Image(String filePath) {
-        this.filePath += currentDir + "/src/test/resources/image/" + filePath;
-        containsFile();
-    }
-
-    private void containsFile() {
+    void containsFile() {
         File file = new File(filePath);
         files = Arrays.stream(file.listFiles())
                 .sorted()

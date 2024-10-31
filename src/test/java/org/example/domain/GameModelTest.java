@@ -8,16 +8,21 @@ import java.util.List;
 import java.util.Map;
 
 public class GameModelTest {
-    private List<AttackImage> soldierAttackImages = new ArrayList<>();
-    private List<MoveImage> soldierMoveImages = new ArrayList<>();
-    private List<RunImage> soldierRunImages = new ArrayList<>();
+    private ImageFactory imageFactory;
+    private MoveImage moveImage;
+    private RunImage runImage;
+    private AttackImage attackImage;
 
     public GameModelTest() {
-        new AttackImage("soldier_archive/soldier_davidthompson/attack");
+        imageFactory = new RunImage();
+        runImage = (RunImage) imageFactory.createImage();
 
+        imageFactory = new AttackImage();
+        attackImage = (AttackImage) imageFactory.createImage();
 
+        imageFactory = new MoveImage();
+        moveImage = (MoveImage) imageFactory.createImage();
     }
-
 
 
 }
