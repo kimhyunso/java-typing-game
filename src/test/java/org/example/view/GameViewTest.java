@@ -1,12 +1,25 @@
 package org.example.view;
 
 
+import org.example.controller.GameControllerTest;
+import org.example.domain.GameModelTest;
+
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class GameViewTest {
-    public GameViewTest() throws SocketException, UnknownHostException {
+
+    private GameControllerTest gameControllerTest;
+    private GameModelTest gameModelTest;
+
+    public GameViewTest(GameControllerTest gameControllerTest, GameModelTest gameModelTest) {
+        this.gameControllerTest = gameControllerTest;
+        this.gameModelTest = gameModelTest;
+    }
+
+
+    public void chiosMode() {
         Scanner input = new Scanner(System.in);
 
         while (true) {
@@ -18,20 +31,8 @@ public class GameViewTest {
 
             String mode = input.next();
 
-//            if (mode.equals("1")) {
-//                modeController = new ModeController(new SingleButtonTest(room));
-//            } else if (mode.equals("2")) {
-//                modeController = new ModeController(new MultiButtonTest(room));
-//            } else if (mode.equals("3")) {
-//                modeController = new ModeController(new SettingButtonTest());
-//            } else if (mode.equals("4")) {
-//                modeController = new ModeController(new HonorButtonTest());
-//            } else if (mode.equals("5")) {
-//                modeController = new ModeController(new ExitButtonTest());
-//                break;
-//            }
 
-            // modeController.action();
         }
+
     }
 }
