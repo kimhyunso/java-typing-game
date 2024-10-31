@@ -5,7 +5,7 @@ import org.example.model.image.Image;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SoldierAttackImage {
+public class SoldierAttackImage extends Image {
     private List<Image> davidthompsonAttackImage = new ArrayList<>();
     private List<Image> jamescarterAttackImage = new ArrayList<>();
     private List<Image> johnmillerAttackImage = new ArrayList<>();

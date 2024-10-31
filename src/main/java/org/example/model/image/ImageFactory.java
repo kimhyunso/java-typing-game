@@ -2,6 +2,8 @@ package org.example.model.image;
 
 import org.example.model.player.Unit;
 
+import java.util.List;
+
 public interface ImageFactory {
-    public Image createImage(Unit unit);
+    public List<Image> createImage(ImageType type);
 }
