@@ -1,6 +1,5 @@
-package org.example.domain.Image;
+package org.example.model.image;
 
-import org.example.domain.Image.Image;
 import org.example.domain.Unit;
 
 public interface ImageFactory {
