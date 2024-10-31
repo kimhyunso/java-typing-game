@@ -3,7 +3,7 @@ package org.example.domain.Image;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MoveImage extends Image implements ImageFactory {
+public class MoveImage extends Image {
     private List<Image> zombieMoveImages = new ArrayList<>();
     private List<Image> soldierMoveImages = new ArrayList<>();
 
@@ -11,9 +11,7 @@ public class MoveImage extends Image implements ImageFactory {
     public MoveImage(String filePath) {
         this.filePath += currentDir + "/src/test/resources/image/" + filePath;
         containsFile();
-    }
-    @Override
-    public Image createImage() {
+
         zombieMoveImages.add(new MoveImage("zombie_archive/zombie_female/walk"));
         zombieMoveImages.add(new MoveImage("zombie_archive/zombie_male/walk"));
         zombieMoveImages.add(new MoveImage("zombie_archive/zombie_wild/walk"));
@@ -21,7 +19,6 @@ public class MoveImage extends Image implements ImageFactory {
         soldierMoveImages.add(new MoveImage("soldier_archive/soldier_davidthompson/walk"));
         soldierMoveImages.add(new MoveImage("soldier_archive/soldier_jamescarter/walk"));
         soldierMoveImages.add(new MoveImage("soldier_archive/soldier_johnmiller/walk"));
-        return this;
     }
 
     public List<Image> getZombieMoveImages() {

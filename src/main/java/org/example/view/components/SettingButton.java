@@ -16,6 +16,7 @@ public class SettingButton extends JButton implements ActionListener {
         super(BUTTON_NAME);
         setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         setMaximumSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+        addActionListener(this);
     }
 
     @Override

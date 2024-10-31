@@ -9,13 +9,12 @@ import org.example.view.settings.ButtonSize;
 
 public class HonorButton extends JButton implements ActionListener {
     private static final String BUTTON_NAME = "명예의전당";
-    private static final int BUTTON_WIDTH = ButtonSize.WIDTH.value();
-    private static final int BUTTON_HEIGHT = ButtonSize.HEIGHT.value();
 
     public HonorButton() {
         super(BUTTON_NAME);
-        setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
-        setMaximumSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+        setPreferredSize(new Dimension(ButtonSize.WIDTH.value(), ButtonSize.HEIGHT.value()));
+        setMaximumSize(new Dimension(ButtonSize.WIDTH.value(), ButtonSize.HEIGHT.value()));
+        addActionListener(this);
     }
 
     @Override
