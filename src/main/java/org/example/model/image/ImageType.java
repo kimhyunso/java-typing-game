@@ -1,0 +1,6 @@
+package org.example.model.image;
+
+public enum ImageType {
+    ZOMBIE_FEMALE, ZOMBIE_MALE, ZOMBIE_WILD,
+    SOLDIER_DAVIDTHOMPSON, SOLDIER_JAMESCARTER, SOLDIER_JOHNMILLER;
+}
