@@ -2,10 +2,11 @@ package org.example;
 
 import org.example.controller.FrameController;
 import org.example.view.GameView;
+import org.example.view.frame.ChooseFrame;
 
 public class Main {
     public static void main(String[] args) {
-        GameView gameView;
-        FrameController frameController = new FrameController();
+        ChooseFrame frame = new ChooseFrame(null);
+        FrameController frameController = new FrameController(frame);
     }
 }
