@@ -23,5 +23,5 @@ jobs:
           LANGUAGE: Korean
 
         with:
-          path: ./.github/workflows/review.md  # 생성할 파일 경로
+          path: './.github/workflows/review.md'  # 생성할 파일 경로
           write-mode: overwrite  # 파일을 덮어쓸지 여부
