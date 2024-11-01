@@ -12,7 +12,6 @@ public class HonorButton extends JButton implements ActionListener {
     private static final String BUTTON_NAME = "명예의전당";
     private FrameController frameController;
 
-
     public HonorButton(FrameController frameController) {
         super(BUTTON_NAME);
         setPreferredSize(new Dimension(ButtonSize.WIDTH.value(), ButtonSize.HEIGHT.value()));

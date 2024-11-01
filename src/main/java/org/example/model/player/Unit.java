@@ -5,9 +5,6 @@ public abstract class Unit {
     protected int heath;
     protected int x;
     protected int y;
-    protected MoveImageFactory moveImageFactory;
-    protected AttackImageFactory attackImageFactory;
-    protected RunImageFactory runImageFactory;
 
 
     abstract void attack();

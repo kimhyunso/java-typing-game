@@ -13,7 +13,6 @@ public class ExitButton extends JButton implements ActionListener {
     private static final String BUTTON_NAME = "끝내기";
     private FrameController frameController;
 
-    
     public ExitButton(FrameController frameController) {
         super(BUTTON_NAME);
         setPreferredSize(new Dimension(ButtonSize.WIDTH.value(), ButtonSize.HEIGHT.value()));

@@ -1,6 +1,7 @@
 package org.example.model.image;
 
 import org.example.model.image.soldier.SoldierAttackImage;
+import org.example.model.image.soldier.SoldierIdleImage;
 import org.example.model.image.soldier.SoldierMoveImage;
 import org.example.model.image.soldier.SoldierRunImage;
 import org.example.model.image.zombie.ZombieAttackImage;
@@ -24,9 +25,12 @@ public class CharacterImageFactory {
             case "run":
                 image = type == UnitType.SOLDIER ? new SoldierRunImage(name) : new ZombieRunImage(name);
                 break;
+            case "idle":
+                image = type == UnitType.SOLDIER ? new SoldierIdleImage(name) : null;
             default:
                 throw new IllegalArgumentException("Unknown action: " + action);
         }
         return image.getImages();
     }
+
 }

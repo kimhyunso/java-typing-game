@@ -1,38 +1,42 @@
 package org.example.controller;
 
+import org.example.model.ChooseModel;
 import org.example.view.frame.CharacterChooseFrame;
 
 import javax.swing.*;
 
 public class FrameController {
-    private JFrame frame;
+    private JFrame pveFrame;
+    private JFrame currentFrame;
 
-    public FrameController(JFrame frame) {
-        this.frame = frame;
+    public FrameController(JFrame pveFrame) {
+        this.pveFrame = pveFrame;
     }
 
     public void handleSingleMode() {
-        frame.setVisible(false);
-        frame.dispose();
-
-        CharacterChooseFrame characterChooseFrame = new CharacterChooseFrame();
+        frameDisable();
+        currentFrame = new CharacterChooseFrame();
     }
 
     public void handleMultiMode() {
-
+        frameDisable();
     }
 
     public void handleSettingMode() {
-
+        frameDisable();
     }
 
     public void handleHonorMode() {
-
+        frameDisable();
     }
 
     public void handleExitMode() {
-        frame.setVisible(false);
-        frame.dispose();
+        frameDisable();
         System.exit(0);
+    }
+
+    private void frameDisable() {
+        pveFrame.setVisible(false);
+        pveFrame.dispose();
     }
 }

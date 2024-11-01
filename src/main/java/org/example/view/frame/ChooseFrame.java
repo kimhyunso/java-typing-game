@@ -1,5 +1,6 @@
 package org.example.view.frame;
 
+import org.example.controller.FrameController;
 import org.example.view.frame.panel.MainMenuPanel;
 import org.example.view.settings.Display;
 import org.example.view.settings.Version;
@@ -16,8 +17,8 @@ public class ChooseFrame extends JFrame {
      private int frameHeight = Display.HEIGHT.value();
      private MainMenuPanel mainMenuPanel;
 
-    public ChooseFrame() {
-        mainMenuPanel = new MainMenuPanel(this);
+    public ChooseFrame(FrameController frameController) {
+        mainMenuPanel = new MainMenuPanel(frameController);
         setTitle("Typing Game " + Version.VERSION.value());
         setSize(frameWidth, frameHeight);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
