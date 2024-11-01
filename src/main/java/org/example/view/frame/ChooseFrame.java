@@ -1,6 +1,7 @@
 package org.example.view.frame;
 
 import org.example.controller.FrameController;
+import org.example.view.GameView;
 import org.example.view.frame.panel.MainMenuPanel;
 import org.example.view.settings.Display;
 import org.example.view.settings.Version;
@@ -12,7 +13,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-public class ChooseFrame extends JFrame {
+public class ChooseFrame extends JFrame implements GameView {
      private int frameWidth = Display.WIDTH.value();
      private int frameHeight = Display.HEIGHT.value();
      private MainMenuPanel mainMenuPanel;
@@ -35,5 +36,10 @@ public class ChooseFrame extends JFrame {
     public void paint(Graphics g) {
         // TODO Auto-generated method stub
         super.paint(g);
+    }
+
+    @Override
+    public void updateView() {
+
     }
 }

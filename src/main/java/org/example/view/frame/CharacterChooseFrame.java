@@ -3,6 +3,7 @@ package org.example.view.frame;
 import org.example.model.ChooseModel;
 import org.example.model.image.CharacterImageFactory;
 import org.example.model.player.UnitType;
+import org.example.view.GameView;
 import org.example.view.settings.Display;
 import org.example.view.settings.Version;
 
@@ -11,7 +12,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.List;
 
-public class CharacterChooseFrame extends JFrame {
+public class CharacterChooseFrame extends JFrame implements GameView {
     private int frameWidth = Display.WIDTH.value();
     private int frameHeight = Display.HEIGHT.value();
     private CharacterImageFactory imageFactory;
@@ -46,5 +47,10 @@ public class CharacterChooseFrame extends JFrame {
         for (BufferedImage image : images) {
             g.drawImage(image, 10, 10,this);
         }
+    }
+
+    @Override
+    public void updateView() {
+
     }
 }

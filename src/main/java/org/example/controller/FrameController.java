@@ -1,9 +1,7 @@
 package org.example.controller;
 
-import org.example.model.ChooseModel;
 import org.example.view.frame.CharacterChooseFrame;
-
-import javax.swing.*;
+import javax.swing.JFrame;
 
 public class FrameController {
     private JFrame pveFrame;

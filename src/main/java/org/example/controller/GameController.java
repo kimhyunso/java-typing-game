@@ -11,8 +11,4 @@ public class GameController {
         this.gameModel = gameModel;
         this.gameView = gameView;
     }
-
-
-
-
 }
