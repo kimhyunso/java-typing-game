@@ -14,14 +14,7 @@ public class GameModelTest {
     private AttackImage attackImage;
 
     public GameModelTest() {
-        imageFactory = new RunImage();
-        runImage = (RunImage) imageFactory.createImage();
 
-        imageFactory = new AttackImage();
-        attackImage = (AttackImage) imageFactory.createImage();
-
-        imageFactory = new MoveImage();
-        moveImage = (MoveImage) imageFactory.createImage();
     }
 
 

@@ -2,23 +2,19 @@ package org.example.model.image.zombie;
 
 import org.example.model.image.Image;
 
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ZombieAttackImage {
-    private List<Image> femaleAttackImage = new ArrayList<>();
-    private List<Image> maleAttackImage = new ArrayList<>();
-    private List<Image> wildAttackImage = new ArrayList<>();
+public class ZombieAttackImage extends Image {
+    private List<BufferedImage> moveImages;
+    private String status = "attack";
 
-    public List<Image> getFemaleAttackImage() {
-        return femaleAttackImage;
+    public ZombieAttackImage(String name) {
+        moveImages = createImages(name, status);
     }
 
-    public List<Image> getMaleAttackImage() {
-        return maleAttackImage;
-    }
-
-    public List<Image> getWildAttackImage() {
-        return wildAttackImage;
+    public List<BufferedImage> getMoveImages() {
+        return moveImages;
     }
 }

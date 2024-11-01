@@ -2,23 +2,19 @@ package org.example.model.image.soldier;
 
 import org.example.model.image.Image;
 
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SoldierRunImage {
-    private List<Image> davidthompsonRunImage = new ArrayList<>();
-    private List<Image> jamescarterRunImage = new ArrayList<>();
-    private List<Image> johnmillerRunImage = new ArrayList<>();
+public class SoldierRunImage extends Image {
+    private List<BufferedImage> moveImages;
+    private String status = "run";
 
-    public List<Image> getDavidthompsonRunImage() {
-        return davidthompsonRunImage;
+    public SoldierRunImage(String name) {
+        moveImages = createImages(name, status);
     }
 
-    public List<Image> getJamescarterRunImage() {
-        return jamescarterRunImage;
-    }
-
-    public List<Image> getJohnmillerRunImage() {
-        return johnmillerRunImage;
+    public List<BufferedImage> getMoveImages() {
+        return moveImages;
     }
 }

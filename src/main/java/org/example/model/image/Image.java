@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public abstract class Image {
-    protected List<BufferedImage> files;
     protected String currentDir = System.getProperty("user.dir");
-    protected String filePath;
 
-    void containsFile() {
+    protected List<BufferedImage> createImages(String name, String status) {
+        String filePath = currentDir + "/src/main/resources/image/" + name + "/" + status;
+
         File file = new File(filePath);
-        files = Arrays.stream(file.listFiles())
+        return Arrays.stream(file.listFiles())
                 .sorted()
                 .map(item -> {
                     try {
