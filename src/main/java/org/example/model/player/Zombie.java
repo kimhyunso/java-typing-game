@@ -1,9 +1,5 @@
 package org.example.model.player;
 
-import org.example.model.image.AttackImageFactory;
-import org.example.model.image.MoveImageFactory;
-import org.example.model.image.RunImageFactory;
-
 public class Zombie extends Unit implements Movable {
     private UnitType type = UnitType.ZOMBIE;
 

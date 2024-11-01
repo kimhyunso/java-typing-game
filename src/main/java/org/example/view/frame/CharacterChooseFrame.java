@@ -1,5 +1,6 @@
 package org.example.view.frame;
 
+import org.example.view.GameView;
 import org.example.view.settings.Display;
 import org.example.view.settings.Version;
 
