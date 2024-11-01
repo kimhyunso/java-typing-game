@@ -13,7 +13,6 @@ jobs:
   code-review:
     runs-on: ubuntu-latest
     steps:
-      # 저장소를 체크아웃하여 파일을 수정할 수 있도록 설정
       - uses: actions/checkout@v2
 
       # ChatGPT 코드 리뷰 작업 실행
@@ -24,5 +23,5 @@ jobs:
           LANGUAGE: Korean
 
         with:
-          path: ./review.md  # 생성할 파일 경로
+          path: ./.github/workflows/review.md  # 생성할 파일 경로
           write-mode: overwrite  # 파일을 덮어쓸지 여부
