@@ -8,5 +8,9 @@ public class Main {
     public static void main(String[] args) {
         ChooseFrame frame = new ChooseFrame(null);
         FrameController frameController = new FrameController(frame);
+
+
+
+
     }
 }
