@@ -3,6 +3,7 @@ package org.example.view.frame.panel;
 import org.example.model.image.CharacterImageFactory;
 import org.example.model.player.UnitType;
 import org.example.view.components.CharacterChooseButton;
+import org.example.view.settings.ButtonSize;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +24,7 @@ public class JamescarterPanel extends JPanel {
                 imageFactory.createImage("soldier_jamescarter", UnitType.SOLDIER, "idle");
 
         for (BufferedImage image : davidthompsonIdleImage) {
-            g.drawImage(image, 0, 0, image.getWidth(), image.getHeight(),this);
+            g.drawImage(image, 0, ButtonSize.HEIGHT.value(), image.getWidth(), image.getHeight(),this);
         }
     }
 }
