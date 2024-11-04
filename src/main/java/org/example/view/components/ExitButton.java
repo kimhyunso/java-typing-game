@@ -6,23 +6,23 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import org.example.controller.FrameController;
+import org.example.controller.MainController;
 import org.example.view.settings.ButtonSize;
 
 public class ExitButton extends JButton implements ActionListener {
     private static final String BUTTON_NAME = "끝내기";
-    private FrameController frameController;
+    private MainController mainController;
 
-    public ExitButton(FrameController frameController) {
+    public ExitButton(MainController mainController) {
         super(BUTTON_NAME);
         setPreferredSize(new Dimension(ButtonSize.WIDTH.value(), ButtonSize.HEIGHT.value()));
         setMaximumSize(new Dimension(ButtonSize.WIDTH.value(), ButtonSize.HEIGHT.value()));
         addActionListener(this);
-        this.frameController = frameController;
+        this.mainController = mainController;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        frameController.handleExitMode();
+        mainController.handleExitMode();
     }
 }
