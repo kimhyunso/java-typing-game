@@ -35,6 +35,5 @@ public class FrameController {
 
     private void frameDisable() {
         pveFrame.setVisible(false);
-        pveFrame.dispose();
     }
 }
