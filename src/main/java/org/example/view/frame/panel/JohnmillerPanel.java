@@ -21,7 +21,7 @@ public class JohnmillerPanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         List<BufferedImage> davidthompsonIdleImage =
-                imageFactory.createImage("soldier_johnmiller", UnitType.SOLDIER, "idle");
+                imageFactory.createImage("johnmiller", UnitType.SOLDIER, "idle");
 
         for (BufferedImage image : davidthompsonIdleImage) {
             g.drawImage(image, 0, ButtonSize.HEIGHT.value(), image.getWidth(), image.getHeight(),this);

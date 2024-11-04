@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public abstract class Image {
-    protected String currentDir = System.getProperty("user.dir");
     protected List<BufferedImage> images;
 
     protected List<BufferedImage> createImages(String filePath, String name, String status) {
