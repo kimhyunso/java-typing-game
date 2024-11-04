@@ -12,8 +12,8 @@ public abstract class Image {
     protected String currentDir = System.getProperty("user.dir");
     protected List<BufferedImage> images;
 
-    protected List<BufferedImage> createImages(String name, String status) {
-        String filePath = currentDir + "/src/main/resources/image/" + name + "/" + status;
+    protected List<BufferedImage> createImages(String filePath, String name, String status) {
+        filePath += name + "/" + status;
 
         File file = new File(filePath);
         return Arrays.stream(file.listFiles())

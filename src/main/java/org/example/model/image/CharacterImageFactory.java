@@ -26,7 +26,8 @@ public class CharacterImageFactory {
                 image = type == UnitType.SOLDIER ? new SoldierRunImage(name) : new ZombieRunImage(name);
                 break;
             case "idle":
-                image = type == UnitType.SOLDIER ? new SoldierIdleImage(name) : null;
+                image = new SoldierIdleImage(name);
+                break;
             default:
                 throw new IllegalArgumentException("Unknown action: " + action);
         }

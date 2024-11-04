@@ -1,19 +1,32 @@
 package org.example.controller;
 
 import org.example.view.frame.CharacterChooseFrame;
+import org.example.view.frame.panel.MainMenuPanel;
+import org.example.view.settings.Display;
+
 import javax.swing.JFrame;
+import java.awt.*;
 
 public class FrameController {
-    private JFrame pveFrame;
-    private JFrame currentFrame;
 
-    public FrameController(JFrame pveFrame) {
-        this.pveFrame = pveFrame;
+    private JFrame prevFrame;
+    private JFrame nextFrame;
+
+    public FrameController(JFrame prevFrame, JFrame nextFrame) {
+        this.prevFrame = prevFrame;
+        this.nextFrame = nextFrame;
+        setup();
+    }
+
+    public void setup() {
+        MainMenuPanel mainMenuPanel = new MainMenuPanel(this);
+        prevFrame.setLayout(new FlowLayout(FlowLayout.CENTER, 0, (Display.HEIGHT.value() -  mainMenuPanel.getPreferredSize().height) / 2));
+        prevFrame.add(mainMenuPanel);
     }
 
     public void handleSingleMode() {
         frameDisable();
-        currentFrame = new CharacterChooseFrame();
+        nextFrame.setVisible(true);
     }
 
     public void handleMultiMode() {
@@ -34,7 +47,6 @@ public class FrameController {
     }
 
     private void frameDisable() {
-        pveFrame.setVisible(false);
-        pveFrame.dispose();
+        prevFrame.setVisible(false);
     }
 }

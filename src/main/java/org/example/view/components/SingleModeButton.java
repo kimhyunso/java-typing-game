@@ -6,8 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import org.example.controller.FrameController;
-import org.example.view.frame.CharacterChooseFrame;
-import org.example.view.frame.ChooseFrame;
 import org.example.view.settings.ButtonSize;
 
 public class SingleModeButton extends JButton implements ActionListener {
@@ -24,6 +22,6 @@ public class SingleModeButton extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        frameController.handleSingleMode();
     }
 }
