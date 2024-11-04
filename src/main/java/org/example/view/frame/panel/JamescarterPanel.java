@@ -2,7 +2,7 @@ package org.example.view.frame.panel;
 
 import org.example.model.image.CharacterImageFactory;
 import org.example.model.player.UnitType;
-import org.example.view.components.CharacterChooseButton;
+import org.example.view.components.JameButton;
 import org.example.view.settings.ButtonSize;
 
 import javax.swing.*;
@@ -13,9 +13,9 @@ import java.util.List;
 public class JamescarterPanel extends JPanel {
     private CharacterImageFactory imageFactory = new CharacterImageFactory();
 
-    public JamescarterPanel() {
+    public JamescarterPanel(JFrame frame) {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        add(new CharacterChooseButton());
+        add(new JameButton(frame));
     }
 
     @Override

@@ -1,6 +1,5 @@
 package org.example;
 
-import org.example.controller.FrameController;
 import org.example.view.frame.MainFrame;
 
 public class Main {

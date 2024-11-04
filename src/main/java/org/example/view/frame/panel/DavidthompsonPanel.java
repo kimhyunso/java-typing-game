@@ -13,9 +13,9 @@ import java.util.List;
 public class DavidthompsonPanel extends JPanel {
     private CharacterImageFactory imageFactory = new CharacterImageFactory();
 
-    public DavidthompsonPanel() {
+    public DavidthompsonPanel(JFrame frame) {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        add(new CharacterChooseButton());
+        add(new DavidButton(frame));
     }
 
     @Override

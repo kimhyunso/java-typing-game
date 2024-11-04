@@ -24,13 +24,13 @@ public class CharacterChooseFrame extends JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        DavidthompsonPanel davidthompsonPanel = new DavidthompsonPanel();
+        DavidthompsonPanel davidthompsonPanel = new DavidthompsonPanel(this);
         add(davidthompsonPanel);
 
-        JohnmillerPanel johnmillerPanel = new JohnmillerPanel();
+        JohnmillerPanel johnmillerPanel = new JohnmillerPanel(this);
         add(johnmillerPanel);
 
-        JamescarterPanel jamescarterPanel = new JamescarterPanel();
+        JamescarterPanel jamescarterPanel = new JamescarterPanel(this);
         add(jamescarterPanel);
     }
 }

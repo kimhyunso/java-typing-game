@@ -1,18 +1,17 @@
 package org.example.controller;
 
-import org.example.view.frame.CharacterChooseFrame;
 import org.example.view.frame.panel.MainMenuPanel;
 import org.example.view.settings.Display;
 
 import javax.swing.JFrame;
 import java.awt.*;
 
-public class FrameController {
+public class MainController {
 
     private JFrame prevFrame;
     private JFrame nextFrame;
 
-    public FrameController(JFrame prevFrame, JFrame nextFrame) {
+    public MainController(JFrame prevFrame, JFrame nextFrame) {
         this.prevFrame = prevFrame;
         this.nextFrame = nextFrame;
         setup();

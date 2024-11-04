@@ -14,7 +14,6 @@ public abstract class Image {
 
     protected List<BufferedImage> createImages(String filePath, String name, String status) {
         filePath += name + "/" + status;
-
         File file = new File(filePath);
         return Arrays.stream(file.listFiles())
                 .sorted()

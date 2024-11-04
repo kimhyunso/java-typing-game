@@ -1,6 +1,6 @@
 package org.example.view.frame;
 
-import org.example.controller.FrameController;
+import org.example.controller.MainController;
 import org.example.view.settings.Display;
 import org.example.view.settings.Version;
 
@@ -11,10 +11,10 @@ import javax.swing.JFrame;
 public class MainFrame extends JFrame {
     private int frameWidth = Display.WIDTH.value();
     private int frameHeight = Display.HEIGHT.value();
-    private FrameController controller;
+    private MainController controller;
 
     public MainFrame() {
-        this.controller = new FrameController(this, new CharacterChooseFrame());
+        this.controller = new MainController(this, new CharacterChooseFrame());
         setTitle("Typing Game " + Version.VERSION.value());
         setSize(frameWidth, frameHeight);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
