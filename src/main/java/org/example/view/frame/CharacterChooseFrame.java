@@ -1,8 +1,8 @@
 package org.example.view.frame;
 
-import org.example.view.frame.panel.DavidthompsonPanel;
-import org.example.view.frame.panel.JamescarterPanel;
-import org.example.view.frame.panel.JohnmillerPanel;
+import org.example.view.frame.panel.DavidPanel;
+import org.example.view.frame.panel.JamePanel;
+import org.example.view.frame.panel.JohnPanel;
 import org.example.view.settings.Display;
 import org.example.view.settings.Version;
 
@@ -24,13 +24,13 @@ public class CharacterChooseFrame extends JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        DavidthompsonPanel davidthompsonPanel = new DavidthompsonPanel(this);
-        add(davidthompsonPanel);
+        DavidPanel davidPanel = new DavidPanel(this);
+        add(davidPanel);
 
-        JohnmillerPanel johnmillerPanel = new JohnmillerPanel(this);
-        add(johnmillerPanel);
+        JohnPanel johnPanel = new JohnPanel(this);
+        add(johnPanel);
 
-        JamescarterPanel jamescarterPanel = new JamescarterPanel(this);
-        add(jamescarterPanel);
+        JamePanel jamePanel = new JamePanel(this);
+        add(jamePanel);
     }
 }

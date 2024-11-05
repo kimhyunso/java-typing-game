@@ -13,19 +13,19 @@ import java.awt.image.BufferedImage;
 import java.util.List;
 
 public class CharacterImageFactory {
-    public List<BufferedImage> createImage(String name, UnitType type, String action) {
+    public List<BufferedImage> createImage(String name, UnitType type, Status action) {
         Image image;
         switch (action) {
-            case "attack":
+            case ATTACK:
                 image = type == UnitType.SOLDIER ? new SoldierAttackImage(name) : new ZombieAttackImage(name);
                 break;
-            case "move":
+            case MOVE:
                 image = type == UnitType.SOLDIER ? new SoldierMoveImage(name) : new ZombieMoveImage(name);
                 break;
-            case "run":
+            case RUN:
                 image = type == UnitType.SOLDIER ? new SoldierRunImage(name) : new ZombieRunImage(name);
                 break;
-            case "idle":
+            case IDLE:
                 image = new SoldierIdleImage(name);
                 break;
             default:

@@ -15,6 +15,8 @@ public class SingleGameFrame extends JFrame implements Runnable {
     private static final int FRAME_DURATION = 1000 / FPS; // 16ms
     private int frameCount = 0;
     private long lastTime = System.currentTimeMillis();
+    private int level = 0;
+
 
 
     public SingleGameFrame(Soldier soldier) {
@@ -55,6 +57,13 @@ public class SingleGameFrame extends JFrame implements Runnable {
                     e.printStackTrace();
                 }
             }
+        }
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        if (level == 0) {
+
         }
     }
 }
