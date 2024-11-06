@@ -1,11 +1,16 @@
 package org.example.view.frame;
 
 import org.example.model.player.Soldier;
+import org.example.model.player.Zombie;
+import org.example.view.settings.ButtonSize;
 import org.example.view.settings.Display;
 import org.example.view.settings.Version;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SingleGameFrame extends JFrame implements Runnable {
     private Soldier soldier;
@@ -16,7 +21,7 @@ public class SingleGameFrame extends JFrame implements Runnable {
     private int frameCount = 0;
     private long lastTime = System.currentTimeMillis();
     private int level = 0;
-
+    private Zombie zombie;
 
 
     public SingleGameFrame(Soldier soldier) {
@@ -29,6 +34,7 @@ public class SingleGameFrame extends JFrame implements Runnable {
         setResizable(false);
         setVisible(true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        zombie = new Zombie("male");
     }
 
     @Override
@@ -37,6 +43,7 @@ public class SingleGameFrame extends JFrame implements Runnable {
             long startTime = System.currentTimeMillis();
 
             repaint();
+            zombie.move();
             frameCount++;
 
             // 1초마다 FPS 측정
@@ -62,8 +69,13 @@ public class SingleGameFrame extends JFrame implements Runnable {
 
     @Override
     public void paint(Graphics g) {
-        if (level == 0) {
-
+        for (BufferedImage moveImage : zombie.getMoveImages()) {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            g.drawImage(moveImage, zombie.getX(), zombie.getY(), moveImage.getWidth(), moveImage.getHeight(),this);
         }
     }
 }
