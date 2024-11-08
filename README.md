@@ -31,6 +31,8 @@
     - 멀티 플레이시, 1p랑 2p의 간격 100px 정도 차이
 4. 이미지 모션
     - 스테이지가 단계가 증가됨에 따라 걷는 이미지에서 뛰는 이미지로 변경
+5. 현재 상태값: 20241108 추가
+    - 죽었는지, 살았는지에 대한 상태값
 
 
 ## 좀비
@@ -71,6 +73,8 @@
 5. 점수
     - 라벨이 빨간색: 20점
     - 라벨이 흰색: 10점
+6. 현재 상태값: 20241108 추가
+    - 죽었는지, 살았는지에 대한 상태값
 
 ## 업그레이드
 구상중
@@ -110,10 +114,6 @@ controller
 ## 이미지 다운 경로
 https://craftpix.net/
 
-## 참고 블로그
-https://binghedev.tistory.com/57
-
-
 ## 20241028
 - fps 60으로 설정 기능 추가
 - 플레이어들은 서로간의 상태 데이터를 udp로 보냄 (최대 플레이어는 2명으로 제한)
@@ -122,7 +122,13 @@ https://binghedev.tistory.com/57
     - 2. 좀비에게 공격을 당하고 있을 경우 
         - 두 플레이어 전부 공격을 당함? -> zombie의 상태, solider의 상태를 brodcast로 보내야함
 
+## 20241108
+- 단순하게 다시 만들어보기
+- 문제점 - 다 만들기 전에도 끊임없이 요구사항이 추가되고, 다른 디자인 패턴들을 생각하게됨
+- 만들어지는 속도가 더뎌짐
 
+## 참고
+1. https://binghedev.tistory.com/57
+2. https://www.youtube.com/watch?v=7mlLlRjFDK8&list=PLiHSiO7e0JtCtLrl-erg7MYuzRBX2VuZd&index=16
 
-참고: https://www.youtube.com/watch?v=7mlLlRjFDK8&list=PLiHSiO7e0JtCtLrl-erg7MYuzRBX2VuZd&index=16
 
