@@ -22,4 +22,8 @@ public class MainModeController {
     public void handleHonorMode() {
 
     }
+
+    public void handleExitMode() {
+
+    }
 }
